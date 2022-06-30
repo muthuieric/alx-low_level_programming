@@ -11,37 +11,37 @@
  *     */
 
 int main(void)
-
-
-
+	
+	
+	
 {
 
-		char c;
+	char c;
 
-			int i;
+	int i;
 
-				long int il;
+	long int il;
 
-					long long int ill;
+	long long int ill;
 
-						float f;
-
-
-
-							printf("The size of a char: %lu byte(s)\n", sizeof(c));
-
-								printf("The size of an int: %lu byte(s)\n", sizeof(i));
-
-									printf("The size of a long int: %lu byte(s)\n", sizeof(il));
-
-										printf("The size of a long long int: %lu byte(s)\n", sizeof(ill);
-
-													printf("The size of a float: %lu byte(s)\n", sizeof(f));
+	float f;
 
 
 
-														return (0);
+	printf("The size of a char: %lu byte(s)\n", sizeof(c));
 
+	printf("The size of an int: %lu byte(s)\n", sizeof(i));
 
+	printf("The size of a long int: %lu byte(s)\n", sizeof(il));
 
-														}
+	printf("The size of a long long int: %lu byte(s)\n", sizeof(ill);
+			
+				printf("The size of a float: %lu byte(s)\n", sizeof(f));
+				
+				
+				
+					return (0);
+					
+					
+					
+					}
