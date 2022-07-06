@@ -22,8 +22,8 @@ int main(void)
 			printf("%ld\n", j);
 		}
 		next = j + k;
-	       	j = k;
-	       	k = next;
+		j = k;
+		k = next;
 	}
 	return (0);
 }
