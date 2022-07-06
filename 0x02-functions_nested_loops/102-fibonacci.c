@@ -17,13 +17,13 @@ int main(void)
 		{
 			printf("%ld, ", j);
 		}
-		 else
-		 {
-			 printf("%ld\n", j);
-		 }
-		 next = j + k;
-		 j = k;
-		 k = next;
+		else
+		{
+			printf("%ld\n", j);
+		}
+		next = j + k;
+	       	j = k;
+	       	k = next;
 	}
 	return (0);
 }
