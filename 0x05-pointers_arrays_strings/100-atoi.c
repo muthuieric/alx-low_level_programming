@@ -1,21 +1,39 @@
 #include "main.h"
 
 /**
- * _strcpy - Copy a string
- * @dest: Destination value
- * @src: Source value
+ * _atoi - Convert a string to an integer.
+ * @s: The pointer to convert
  *
- * Return: the pointer to dest
+ * Return: A integer
  */
-char *_strcpy(char *dest, char *src)
+int _atoi(char *s)
 {
-	int i;
+	int c = 0;
+	unsigned int ni = 0;
+	int min = 1;
+	int isi = 0;
 
-	for (i = 0; src[i] != '\0'; i++)
+	while (s[c])
 	{
-		dest[i] = src[i];
-	}
-	dest[i++] = '\0';
+		if (s[c] == 45)
+		{
+			min *= -1;
+		}
+		while (s[c] >= 48 && s[c] <= 57)
+		{
+			isi = 1;
+			ni = (ni * 10) + (s[c] - '0');
+			c++;
+		}
 
-	return (dest);
+		if (isi == 1)
+		{
+			break;
+		}
+
+		c++;
+	}
+
+	ni *= min;
+	return (ni);
 }
