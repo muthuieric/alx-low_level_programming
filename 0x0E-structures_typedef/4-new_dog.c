@@ -1,52 +1,53 @@
 #include "dog.h"
 #include <stdlib.h>
 
-int _strlen(char *str);
-char *_strcopy(char *dest, char *src);
-dog_t *new_dog(char *name, float age, char *owner);
-
 /**
- * _strlen - Finds the length of a string.
- * @str: The string to be measured.
+ * new_dog - creates a new dog.
+ * @name: name of the dog.
+ * @age: age of the dog.
+ * @owner: owner of the dog.
  *
- * Return: The length of the string.
+ * Return: struct dog.
+ * if fails, returns NULL.
  */
-int _strlen(char *str)
+dog_t* new_dog(char* name, float age, char* owner)
 {
-	int len = 0;
+	dog_t* p_dog;
+	int i, lname, lowner;
 
-	while (*str++)
-		len++;
+	p_dog = malloc(sizeof(*p_dog));
+	if (p_dog == NULL || !(name) || !(owner))
+	{
+		free(p_dog);
+		return (NULL);
+	}
 
-	return (len);
-}
+	for (lname = 0; name[lname]; lname++)
+		;
 
-/**
- * _strcopy - Copies a string pointed to by src, including the
- *            terminating null byte, to a buffer pointed to by dest.
- * @dest: The buffer storing the string copy.
- * @src: The source string.
- *
- * Return: The pointer to dest.
- */
-char *_strcopy(char *dest, char *src)
-{
-	int index = 0;
+	for (lowner = 0; owner[lowner]; lowner++)
+		;
 
-	for (index = 0; src[index]; index++)
-		dest[index] = src[index];
+	p_dog->name = malloc(lname + 1);
+	p_dog->owner = malloc(lowner + 1);
 
-	dest[index] = '\0';
+	if (!(p_dog->name) || !(p_dog->owner))
+	{
+		free(p_dog->owner);
+		free(p_dog->name);
+		free(p_dog);
+		return (NULL);
+	}
 
-	return (dest);
-}
+	for (i = 0; i < lname; i++)
+		p_dog->name[i] = name[i];
+OAOAOAOAOAOAOAOAOAOAOA	p_dog->name[i] = '\0';
 
-/**
- * new_dog - Creates a new dog.
- * @name: The name of the dog.
- * @age: The age of the dog.
- * @owner: The owner of the dog.
- *
- * Return: The new struct dog.
- */
+OAOAOAOAOAOAOAOAOAOA	p_dog->age = age;
 
+OAOAOAOAOA	for (i = 0; i < lowner; i++)
+		p_dog->owner[i] = owner[i];
+OAOA	p_dog->owner[i] = '\0';
+
+OAOA	return (p_dog);
+OAOA}
